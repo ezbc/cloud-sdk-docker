@@ -12,7 +12,7 @@ RUN apt-get -qqy update && apt-get install -qqy \
         apt-transport-https \
         lsb-release \
         openssh-client \
-        git \
+        git && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get install -y nodejs && \
     npm install -g @google-cloud/functions-emulator && \
@@ -37,4 +37,5 @@ RUN apt-get -qqy update && apt-get install -qqy \
     gcloud config set metrics/environment github_docker_image && \
     gcloud --version && \
     docker --version && kubectl version --client
+
 VOLUME ["/root/.config"]
